@@ -1,0 +1,37 @@
+body {
+  background-image: url('./B2SBackground.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat-y;
+  width: auto;
+  height: 100vh;
+}
+
+.background-image {
+  
+}
+
+.container {
+  margin: auto;
+  overflow: hidden;
+  display: block;
+}
+
+.section {
+  background-color: aliceblue;
+  opacity: .9;
+  width: 80%;
+  height: auto;
+  margin: auto;
+  border-radius: 10px;
+  min-height: 100px;
+  border: 2px solid black;
+  
+}
+
+.first {
+  margin-top: 10px;
+}
+
+
+
