@@ -13,6 +13,7 @@ tr:first-of-type td {
 
 .motherInfo {
     margin-left: 5px;
+    width: 175px;
 }
 
 .childInfoLine {

@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Button } from 'react-bootstrap'
+import { Button, Modal } from 'react-bootstrap'
 import './TableRowComponent.css'
+import SubmitModal from '../SubmitModal/SubmitModal';
 
 function ChildInfo({ childNames, childGenders, childAges, childGrades }) {
   return (
     <ul>
-      {childNames.map((child, index) => {
+      {Array.isArray(childNames) && childNames.map((child, index) => {
         return (
           <li key={index}>
             <p className="childInfoLine">
@@ -20,10 +21,22 @@ function ChildInfo({ childNames, childGenders, childAges, childGrades }) {
 
 function TableRow({mothersFirstName, numberOfChildren, childNames, childAges, childGrades, childGenders, sponsorEmail}) {
   const [isExpanded, setIsExpanded] = useState(false)
+  const [showModal, setShowModal] = useState(false);
 
   const handleRowClick = () => {
     setIsExpanded(!isExpanded)
   }
+
+  const handleSignUpClick = (event) => {
+    if (isExpanded) {
+      event.stopPropagation();
+    }
+    setShowModal(true)
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <>
@@ -37,12 +50,14 @@ function TableRow({mothersFirstName, numberOfChildren, childNames, childAges, ch
               }
             </div>
             <div className="d-none d-md-block" style={{ paddingLeft: '10px', paddingRight: '10px' }}>
-              {sponsorEmail === '' ? <h6>Not Filled</h6> : <h6>Filled By {sponsorEmail}</h6>}
+              {sponsorEmail !== null ? <h6>Filled By {sponsorEmail}</h6> : <h6>Not Filled</h6>}
             </div>
             <div className='fixed-width'>
-              <Button className="submitBtn" disabled={sponsorEmail !== ""}>
-                {sponsorEmail !== "" ? "Filled" : "Sign Up"}
-              </Button>
+                {sponsorEmail ? (
+                  <Button className="submitBtn" disabled={true}>Filled</Button>
+                ) : (
+                  <Button className="submitBtn" onClick={handleSignUpClick}>Sign Up</Button>
+                )}
             </div>
           </div>
         </td>
@@ -59,6 +74,17 @@ function TableRow({mothersFirstName, numberOfChildren, childNames, childAges, ch
           </td>
         </tr>
       )}
+       <Modal show={showModal} onHide={handleCloseModal}>
+        <SubmitModal
+          mothersFirstName={mothersFirstName}
+          numberOfChildren={numberOfChildren}
+          childNames={childNames}
+          childAges={childAges}
+          childGrades={childGrades}
+          childGenders={childGenders}
+          hideModel={handleCloseModal}
+        />
+      </Modal>
     </>
   )
 }

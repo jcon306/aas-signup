@@ -1,0 +1,11 @@
+.FormLabel {
+    color: blueviolet;
+}
+
+.FormInput {
+    margin-bottom: 10px;
+}
+.ModalBody {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
