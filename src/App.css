@@ -24,7 +24,6 @@ body {
   height: auto;
   margin: auto;
   border-radius: 10px;
-  min-height: 100px;
   border: 2px solid black;
   
 }
@@ -33,5 +32,11 @@ body {
   margin-top: 10px;
 }
 
+@media screen and (max-width: 540px) {
+  .section {
+    width: 95%;
+  }
+  
+}
 
 

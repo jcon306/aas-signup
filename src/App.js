@@ -1,9 +1,9 @@
 import React from 'react'
 import HeaderComponent from './HeaderComponent/HeaderComponent';
 import InfoComponent from './InfoComponent/InfoComponent';
-//import data from './data';
 import './App.css';
 //import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
      return (
@@ -15,7 +15,8 @@ function App() {
                     <div className='section first'>
                         <InfoComponent />
                     </div>
-                   
+                   <div>
+                   </div>
             </div>
         </div>
      )

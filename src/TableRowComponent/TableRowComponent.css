@@ -1,0 +1,50 @@
+tr:first-of-type td {
+    padding-top: 10px;
+  }
+
+.submitBtn {
+    margin-right: 10px;   
+}
+
+.filled {
+    margin-right: 10%;
+   
+}
+
+.motherInfo {
+    margin-left: 5px;
+}
+
+.childInfoLine {
+    font-size: 15px;
+    word-wrap: break-word;
+    font-size: 14px;
+    line-height: 1.2;
+} 
+
+.childName {
+    font-weight: bold;
+  }
+
+li + li {
+    margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+    .motherInfo {
+      font-size: 1rem;
+      margin-left: 10px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .childInfoLine {
+      display: block;
+      font-size: 16px;
+    }
+    
+    li + li {
+      margin-top: 20px;
+    }
+   
+  }
