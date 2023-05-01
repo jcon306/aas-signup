@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import HeaderComponent from './HeaderComponent/HeaderComponent';
 import InfoComponent from './InfoComponent/InfoComponent';
 import './App.css';
@@ -6,14 +6,29 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+    const [isChecked, setIsChecked] = useState(false)
+
+    const handleCheckChange = (e) => {
+        setIsChecked(!isChecked)
+    }
+
      return (
         <div>
             <div className= 'container'>
                     <div className='section first'>
                         <HeaderComponent />
-                    </div>  
+                    </div>
+                    <div className='section sortingBox'>
+                        <input 
+                            type="checkbox" 
+                            name="unfilledOnly"
+                            checked={isChecked}
+                            onChange={handleCheckChange}
+                         />
+                        <label className='sortingLabel' for="unfilledOnly">&ensp;Hide Filled Spots</label>
+                    </div>
                     <div className='section first'>
-                        <InfoComponent />
+                        <InfoComponent isChecked={isChecked} />
                     </div>
                    <div>
                    </div>

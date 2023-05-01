@@ -7,6 +7,7 @@ body {
   height: 100vh;
 }
 
+
 .background-image {
   
 }
@@ -25,7 +26,18 @@ body {
   margin: auto;
   border-radius: 10px;
   border: 2px solid black;
-  
+  margin-bottom: 10px;
+}
+
+.sortingBox {
+  text-align: right;
+  border: none;
+  background-color: rgba(255, 253, 253, .1);
+}
+
+.sortingLabel {
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .first {

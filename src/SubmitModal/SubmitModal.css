@@ -1,11 +1,23 @@
+.ModalDialog {
+    border: none;
+}
+.ModalHeader {
+    border: none;
+}
+
+.ModalBody {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
 .FormLabel {
-    color: blueviolet;
+    color: #0d6efd;
 }
 
 .FormInput {
     margin-bottom: 10px;
 }
-.ModalBody {
-    max-height: 60vh;
-    overflow-y: auto;
-  }
+
+.ModalFooter {
+    border: none;
+}

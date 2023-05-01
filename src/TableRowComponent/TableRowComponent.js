@@ -19,7 +19,7 @@ function ChildInfo({ childNames, childGenders, childAges, childGrades }) {
   );
 }
 
-function TableRow({mothersFirstName, numberOfChildren, childNames, childAges, childGrades, childGenders, sponsorEmail}) {
+function TableRow({mothersFirstName,mothersEmail, numberOfChildren, childNames, childAges, childGrades, childGenders, sponsorEmail}) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [showModal, setShowModal] = useState(false);
 
@@ -31,7 +31,7 @@ function TableRow({mothersFirstName, numberOfChildren, childNames, childAges, ch
     if (isExpanded) {
       event.stopPropagation();
     }
-    setShowModal(true)
+      setShowModal(true)
   };
 
   const handleCloseModal = () => {
@@ -77,6 +77,7 @@ function TableRow({mothersFirstName, numberOfChildren, childNames, childAges, ch
        <Modal show={showModal} onHide={handleCloseModal}>
         <SubmitModal
           mothersFirstName={mothersFirstName}
+          mothersEmail={mothersEmail}
           numberOfChildren={numberOfChildren}
           childNames={childNames}
           childAges={childAges}

@@ -2,20 +2,34 @@ import React, { useEffect, useState } from 'react';
 import './InfoComponent.css';
 import FamilyComponent from '../FamilyComponent/FamilyComponent';
 
-const InfoComponent = () => {
+const InfoComponent = ({ isChecked }) => {
   const [fetchedData, setFetchedData] = useState([]);
+  let sorting = ""
+  let URL 
 
-  useEffect(() => {
-    fetch('https://sheet.best/api/sheets/b3bd3d89-c575-4f6f-b59a-81f9d5d5f16d')
-      .then((response) => response.json())
-      .then((data) => {
-        setFetchedData(data);
-        // console.log(data)
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+  // if (isChecked) {
+  //   URL = `https://sheet.best/api/sheets/b3bd3d89-c575-4f6f-b59a-81f9d5d5f16d/Sponsored/No`
+  // } else {
+  //   URL = 'https://sheet.best/api/sheets/b3bd3d89-c575-4f6f-b59a-81f9d5d5f16d'
+  // }
+ 
+  //   useEffect(() => {
+  //      fetch(URL)
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         console.log(data)
+  //         if (isChecked && data[0]["Sponsor Email"]) {
+  //           //setFetchedData(data)
+  //           //console.log(data)
+  //           return
+  //         } else {
+  //           setFetchedData(data)
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.error(error);
+  //       });
+  //   }, [URL, isChecked]);
 
   return (
     <>
@@ -30,6 +44,7 @@ const InfoComponent = () => {
               <FamilyComponent
                 key={key}
                 mothersFirstName={data["Mother's First Name"]}
+                mothersEmail={data["Email"]}
                 numberOfChildren={data["Number Of Children"]}
                 childNames={childNames}
                 childGenders={childGenders}
