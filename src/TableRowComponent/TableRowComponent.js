@@ -50,7 +50,7 @@ function TableRow({mothersFirstName,mothersEmail, numberOfChildren, childNames, 
               }
             </div>
             <div className="d-none d-md-block" style={{ paddingLeft: '10px', paddingRight: '10px' }}>
-              {sponsorEmail !== null ? <h6>Filled By {sponsorEmail}</h6> : <h6>Not Filled</h6>}
+              {sponsorEmail !== null ? <h6>Filled By {sponsorEmail}</h6> : <h6>Available</h6>}
             </div>
             <div className='fixed-width'>
                 {sponsorEmail ? (
