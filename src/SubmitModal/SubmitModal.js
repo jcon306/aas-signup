@@ -68,7 +68,7 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
                         Common needed supplies are: Pencils, pens, notebooks, markers and folders. Supplies can be dropped off anytime in August.<br />
                         Thank you once again for your generosity!<br /><br />
                         Sincerely,<br /><br />
-                        F4F`
+                        Families For Families`
                       }
                       if (window.Email) {
                         window.Email.send(config).then(() =>{
