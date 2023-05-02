@@ -7,9 +7,9 @@ const InfoComponent = ({ isChecked }) => {
   let URL 
 
   if (isChecked) {
-    URL = `https://sheet.best/api/sheets/b3bd3d89-c575-4f6f-b59a-81f9d5d5f16d/Sponsored/No`
+    URL = process.env.REACT_APP_GS_URL_SORT
   } else {
-    URL = 'https://sheet.best/api/sheets/b3bd3d89-c575-4f6f-b59a-81f9d5d5f16d'
+    URL = process.env.REACT_APP_GS_URL
   }
  
     useEffect(() => {

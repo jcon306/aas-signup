@@ -20,12 +20,13 @@ function App() {
                     </div>
                     <div className='section sortingBox'>
                         <input 
+                            id="unfilledOnly"
                             type="checkbox" 
                             name="unfilledOnly"
                             checked={isChecked}
                             onChange={handleCheckChange}
                          />
-                        <label className='sortingLabel' for="unfilledOnly">&ensp;Hide Filled Spots</label>
+                        <label className='sortingLabel' htmlFor="unfilledOnly">&ensp;Hide Filled Spots</label>
                     </div>
                     <div className='section first'>
                         <InfoComponent isChecked={isChecked} />

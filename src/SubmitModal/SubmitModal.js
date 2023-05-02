@@ -25,7 +25,7 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      fetch(`https://sheet.best/api/sheets/b3bd3d89-c575-4f6f-b59a-81f9d5d5f16d/Email/${mothersEmail}`)
+      fetch(process.env.REACT_APP_GS_URL_SUBMIT + mothersEmail)
             .then((response) => response.json())
             .then((data) => {
               if (data[0]["Sponsor Email"]) {
@@ -48,7 +48,7 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
                   "Sponsor First Name": firstName,
                   "Sponsor Sign Up Date": new Date().toLocaleDateString('en-US')
                 };
-                fetch(`https://sheet.best/api/sheets/b3bd3d89-c575-4f6f-b59a-81f9d5d5f16d/Email/${mothersEmail}`, {
+                fetch(process.env.REACT_APP_GS_URL_SUBMIT + mothersEmail, {
                   method: "PATCH",
                   mode: "cors",
                   headers: {
