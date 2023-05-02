@@ -16,10 +16,8 @@ const InfoComponent = ({ isChecked }) => {
        fetch(URL)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data)
           if (isChecked && data[0]["Sponsor Email"]) {
-            //setFetchedData(data)
-            //console.log(data)
+
             return
           } else {
             setFetchedData(data)

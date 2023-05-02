@@ -4,12 +4,13 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import './SubmitModal.css';
 
+
 const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNames, childAges, childGrades, childGenders, hideModel }) => {
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [sponsorEmail, setSponsorEmail] = useState("");
-    
+
     const handleFirstNameChange = (event) => {
       setFirstName(event.target.value);
     };
@@ -27,7 +28,6 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
       fetch(`https://sheet.best/api/sheets/b3bd3d89-c575-4f6f-b59a-81f9d5d5f16d/Email/${mothersEmail}`)
             .then((response) => response.json())
             .then((data) => {
-              console.log(data[0]["Sponsor Email"]);
               if (data[0]["Sponsor Email"]) {
                 alert("Sorry, somebody just filled this spot. Please choose another family");
                 window.location.reload();
@@ -35,6 +35,12 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
                 alert('Please fill out all the information fields.')
               } 
               else {
+                let childrenInfo = "";
+                childNames.forEach((childName, index) => {
+                  const childInfo = `${childName}, ${childGenders[index]}, ${childAges[index]} years old, Grade: ${childGrades[index]}`;
+                  childrenInfo += `<p>${childInfo}</p>`;
+                });
+
                 const bodyData = {
                   "Sponsored": "Yes",
                   "Sponsor Email": sponsorEmail,
@@ -52,8 +58,26 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
                 })
                   .then((r) => {
                     if (r.status === 200) {
-                      alert("Sign up successful!");
-                      window.location.reload()
+                      const config = {
+                        SecureToken: 'ec3f12c6-2235-4974-bb7d-9f2ddf37ab83',
+                        To : sponsorEmail,
+                        From : "consolinojoe@gmail.com",
+                        Subject : "Thank you!",
+                        Body : `Hello ${firstName}, thank you for your generosity! You have selected to support
+                        ${mothersFirstName}'s ${numberOfChildren} students: <br /><br />Child Information:<br />${childrenInfo}<br />
+                        Common needed supplies are: Pencils, pens, notebooks, markers and folders. Supplies can be dropped off anytime in August.<br />
+                        Thank you once again for your generosity!<br /><br />
+                        Sincerely,<br /><br />
+                        F4F`
+                      }
+                      if (window.Email) {
+                        window.Email.send(config).then(() =>{
+                          alert("Sign up successful! Please check your inbox for a confirmation email. If you do not see it please check your spam folder.")
+                          window.location.reload()
+                        })
+
+                      }
+                     
                     } else if (r.status !== 200) {
                       alert("There was a problem signing up");
                     }
@@ -135,7 +159,7 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
                     </li>
                     );
                 })}
-            </ul>
+             </ul>
             </Form.Group>
           <Modal.Footer className="ModelFooter">
             <Button variant="secondary" onClick={hideModel}>Close</Button>
