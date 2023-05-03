@@ -20,11 +20,12 @@ function ChildInfo({ childNames, childGenders, childAges, childGrades }) {
 }
 
 function TableRow({mothersFirstName,mothersEmail, numberOfChildren, childNames, childAges, childGrades, childGenders, sponsorEmail}) {
-  const [isExpanded, setIsExpanded] = useState(true)
+  //const [isExpanded, setIsExpanded] = useState(true)
   const [showModal, setShowModal] = useState(false);
+  const isExpanded = true
 
   // const handleRowClick = () => {
-  //   setIsExpanded(!isExpanded)
+  //   setIsExpanded(true)
   // }
 
   const handleSignUpClick = (event) => {

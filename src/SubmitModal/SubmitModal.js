@@ -59,7 +59,7 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
                   .then((r) => {
                     if (r.status === 200) {
                       const config = {
-                        SecureToken: 'ec3f12c6-2235-4974-bb7d-9f2ddf37ab83',
+                        SecureToken: process.env.REACT_APP_EJ_TOKEN,
                         To : sponsorEmail,
                         From : "consolinojoe@gmail.com",
                         Subject : "Thank you!",
