@@ -32,10 +32,10 @@ const InfoComponent = ({ isChecked }) => {
     <>
       <div className="data-container">
         {fetchedData.map((data, key) => {
-            const childNames = data["Child Name(s)"].split(", ");
-            const childAges = data["Child Age(s)"].split(", ");
-            const childGenders = data["Child Gender(s)"].split(", ");
-            const childGrades = data["Child Grade(s)"].split(", ");
+            const childNames = data["Child Name(s)"].split(",");
+            const childAges = data["Child Age(s)"].split(",");
+            const childGenders = data["Child Gender(s)"].split(",");
+            const childGrades = data["Child Grade(s)"].split(",");
           return (
             <div key={key}>
               <FamilyComponent

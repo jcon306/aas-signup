@@ -59,20 +59,21 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
                   .then((r) => {
                     if (r.status === 200) {
                       const config = {
-                        SecureToken: process.env.REACT_APP_EJ_TOKEN,
+                        SecureToken: 'ec3f12c6-2235-4974-bb7d-9f2ddf37ab83', //process.env.REACT_APP_EJ_TOKEN,
                         To : sponsorEmail,
                         From : "consolinojoe@gmail.com",
                         Subject : "Thank you!",
-                        Body : `Hello ${firstName}, thank you for your generosity! You have selected to support
-                        ${mothersFirstName}'s ${numberOfChildren} students: <br /><br />Child Information:<br />${childrenInfo}<br />
-                        Common needed supplies are: Pencils, pens, notebooks, markers and folders. Supplies can be dropped off anytime in August.<br />
-                        Thank you once again for your generosity!<br /><br />
-                        Sincerely,<br /><br />
-                        Families For Families`
+                        Body : `Hello ${firstName}, thank you for participating in our Adopt A Student Program!! You have chosen to sponsor 
+                         ${mothersFirstName}'s ${numberOfChildren} students: <br /><br />${childrenInfo}<br />
+                         Please purchase a backpack for each child and fill it with grade appropriate school supplies. If you would like a list of 
+                         suggested supplies, go to https://www.families4families.com You do not need to follow it exactly, anything you are willing and able to give will be greatly appreciated! 
+                         Please label it with the student’s name and drop at 250 Braen Avenue in Wyckoff on August 26th between 10-12. If you cannot drop off during this time,
+                          you can drop off at the same address Tuesdays through Fridays from 1:00-5:00. If you have any questions, please reach out to us  at 201-499-5622. 
+                          Thank you again for helping to start the school year off right for students in need!`
                       }
                       if (window.Email) {
                         window.Email.send(config).then(() =>{
-                          alert("Sign up successful! Please check your inbox for a confirmation email. If you do not see it please check your spam folder.")
+                          alert('Thank you! Your sign up was successful! Please check your inbox for a confirmation email. If you do not see it, please check your spam folder.')
                           window.location.reload()
                         })
 
@@ -142,10 +143,7 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
 
             <Form.Group controlId="formBasicMessage">
               <Form.Label>
-                Thank you for your generosity! Please make sure the information
-                below is the correct family you have choose to select. A
-                confirmation email with the information will be sent to your
-                email shortly.
+              Once you hit submit, a confirmation email will be sent shortly. <span style={{color: 'red'}}>If you do not see it, please check your spam folder.</span> 
               </Form.Label>
               <h6>{mothersFirstName}'s {numberOfChildren} student(s)</h6>
               <ul>

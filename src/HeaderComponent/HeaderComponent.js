@@ -15,11 +15,13 @@ const HeaderComponent = () => {
                 <h1>Adopt A Student Sign Up</h1> 
                 <hr /> 
                 <p>
-                    &ensp;Thank you for your willingness to support families with students in need this back to school season as a partnership with Families 
-                    for Families. Your support is critical for helping to fill the backpacks of young children! Sign up below to sponsor a family of students. 
-                    Then purchase the supplies and drop them off to 250 Braen Ave in Wyckoff on September ------ (detailed instructions will 
-                    be given after signing up) to be delivered to the families. We are also in need of delivery drivers from --- to deliver the supplies. 
-                    Suggested supplies include pencils, notebooks, folders or anything else you would like to include 
+                    &ensp;Thank you for your willingness to help students in need start the school year off right! As you know, being 
+                    prepared is an important step toward a student's success. Providing a backpack filled with needed school supplies is 
+                    one way you can help them succeed. Choose a family below that you would like to purchase backpacks filled with the 
+                    school supplies for.  Once you sign up, you will then receive an email with a link to a supply list specific to your student. 
+                    You will then purchase the supplies and drop them off to Families for Families, 250 Braen Ave in Wyckoff on August 26th between 
+                    10-12 to be delivered to the families.  (we can make arrangements for early drop offs)
+ 
                 </p>
             </div> 
             
