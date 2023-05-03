@@ -3,7 +3,9 @@ tr:first-of-type td {
   }
 
 .submitBtn {
-    margin-right: 10px;   
+    margin-right: 10px;
+    min-width: 80px;
+    cursor: pointer;   
 }
 
 .filled {
@@ -46,6 +48,25 @@ li + li {
     
     li + li {
       margin-top: 20px;
+    }
+   
+  }
+
+  @media (max-width: 280px) {
+    .motherInfo {
+      font-size: 12px;
+      margin-left: 7px;
+      width: 120px;
+    }
+    .childInfoLine {
+      display: block;
+      font-size: 10px;
+      line-height: 1;
+    }
+    
+    .submitBtn {
+      max-width: 5px;
+      margin-right: 5px;
     }
    
   }

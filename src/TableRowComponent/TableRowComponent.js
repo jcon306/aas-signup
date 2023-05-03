@@ -20,12 +20,12 @@ function ChildInfo({ childNames, childGenders, childAges, childGrades }) {
 }
 
 function TableRow({mothersFirstName,mothersEmail, numberOfChildren, childNames, childAges, childGrades, childGenders, sponsorEmail}) {
-  const [isExpanded, setIsExpanded] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(true)
   const [showModal, setShowModal] = useState(false);
 
-  const handleRowClick = () => {
-    setIsExpanded(!isExpanded)
-  }
+  // const handleRowClick = () => {
+  //   setIsExpanded(!isExpanded)
+  // }
 
   const handleSignUpClick = (event) => {
     if (isExpanded) {
@@ -40,17 +40,17 @@ function TableRow({mothersFirstName,mothersEmail, numberOfChildren, childNames, 
 
   return (
     <>
-      <tr onClick={handleRowClick}>
+      <tr>
         <td>
           <div className="d-flex justify-content-between align-items-center">
             <div>
               {!isExpanded ?
-                <h6 className='motherInfo'>&rArr; {mothersFirstName}'s {numberOfChildren} student(s)</h6> :
-                <h6 className='motherInfo'>&dArr; {mothersFirstName}'s {numberOfChildren} student(s)</h6>
+                <h6 className='motherInfo'> {mothersFirstName}'s {numberOfChildren} student(s)</h6> :
+                <h6 className='motherInfo'> {mothersFirstName}'s {numberOfChildren} student(s)</h6>
               }
             </div>
             <div className="d-none d-md-block" style={{ paddingLeft: '10px', paddingRight: '10px' }}>
-              {sponsorEmail !== null ? <h6>Filled By {sponsorEmail}</h6> : <h6>Available</h6>}
+              {sponsorEmail !== null ? <h6>Spot Filled</h6> : <h6>Available</h6>}
             </div>
             <div className='fixed-width'>
                 {sponsorEmail ? (
