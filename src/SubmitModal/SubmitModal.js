@@ -64,7 +64,7 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
                         From : "consolinojoe@gmail.com",
                         Subject : "Thank you!",
                         Body : `Hello ${firstName}, thank you for participating in our Adopt A Student Program!! You have chosen to sponsor 
-                         ${mothersFirstName}'s ${numberOfChildren} students: <br /><br />${childrenInfo}<br />
+                         ${mothersFirstName}'s ${numberOfChildren} student(s): <br /><br />${childrenInfo}<br />
                          Please purchase a backpack for each child and fill it with grade appropriate school supplies. If you would like a list of 
                          suggested supplies, go to https://www.families4families.com You do not need to follow it exactly, anything you are willing and able to give will be greatly appreciated! 
                          Please label it with the student’s name and drop at 250 Braen Avenue in Wyckoff on August 26th between 10-12. If you cannot drop off during this time,

@@ -24,31 +24,165 @@ body {
   margin-bottom: 10px;
 }
 
-.sortingBox {
-  text-align: right;
+.sorting {
   border: none;
-  background-color: rgba(255, 253, 253, .1);
+  font-size: 15px;
+  padding: 5px 5px;
+  background-color: rgba(255,255,255,.1);
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+.sortByLabel {
+  margin-right: 3%;
+}
+
+.infoLabel {
+  margin-right: 1%;
+}
+
+.infoOption {
+  margin-right: 3%;
+  cursor: pointer;
 }
 
 #unfilledOnly {
   cursor: pointer;
 }
 
-.sortingLabel {
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
+.sortingBox {
+  text-align: right;
+  border: none;
+  background-color: rgba(255, 253, 253, .1);
 }
 
 .first {
   margin-top: 10px;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 912px) {
   .section {
     width: 95%;
   }
-  
 }
 
+@media screen and (max-width: 820px) {
+  .section {
+    width: 95%;
+  }
+  .sizeLabel {
+    margin-bottom: 5px;
+  }
+}
 
+@media screen and (width: 375px) {
+  .sorting {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .section {
+    width: 95%;
+  }
+  .sortByLabel {
+    margin-right: 5%;
+  }
+  .genderLabel {
+    margin-left: 10%;
+  } 
+  .infoOption {
+    margin-right: 5%;
+  }
+}
+
+@media screen and (max-width: 393px) {
+
+
+  .sortByLabel {
+    margin-right: 5%;
+  }
+  .genderLabel {
+    margin-left: 4%;
+  } 
+  .genderDropdown {
+    margin-right: 1px;
+  }
+  .infoOption {
+    margin-right: 5%;
+  }
+
+}
+
+@media screen and (max-width: 390px) {
+  
+  .sortByLabel {
+    margin-right: 5%;
+  }
+  .genderLabel {
+    margin-left: 5%;
+  } 
+  .infoOption {
+    margin-right: 5%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+  .sortByLabel {
+    margin-right: 5%;
+  }
+  .infoOption {
+    margin-right: 10px;
+  }
+  .familySizeDropdown {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  
+  .sortByLabel {
+    margin-right: 5%;
+  }
+
+  .sorting {
+    padding: 0 0;
+  }
+  .genderLabel {
+    margin-left: 0;
+  } 
+  .infoOption {
+    margin-right: 5%;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  
+  .sorting {
+    padding: 0 0;
+  }
+ .sortByLabel{
+  margin-right: 50%;
+  margin-bottom: 5px;
+ }
+
+.infoLabel {
+  margin-right: 0;
+}
+
+.infoOption {
+  margin-right: 20%;
+  margin-bottom: 5px;
+}
+.genderLabel {
+  margin-left: none;
+}
+ .familySizeDropdown {
+  margin-right: 30%;
+ }
+
+}
