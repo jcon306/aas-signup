@@ -17,7 +17,10 @@ const InfoComponent = ({ familySizeFilter, familyGendersFilter, hideFilter }) =>
         .catch((error) => {
           console.error(error);
         });
+        
     }, [URL]);
+
+   
   return (
     <>
         <div className="data-container">
