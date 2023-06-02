@@ -61,6 +61,7 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
                       const config = {
                         SecureToken: 'ec3f12c6-2235-4974-bb7d-9f2ddf37ab83', //process.env.REACT_APP_EJ_TOKEN,
                         To : sponsorEmail,
+                        Cc: "consolinojoe@yahoo.com",
                         From : "consolinojoe@gmail.com",
                         Subject : "Thank you!",
                         Body : `Hello ${firstName}, thank you for participating in our Adopt A Student Program!! You have chosen to sponsor 
