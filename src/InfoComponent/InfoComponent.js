@@ -31,7 +31,6 @@ const InfoComponent = ({ familySizeFilter, familyGendersFilter, hideFilter }) =>
               const childGenders = data["Child Gender(s)"].split(",");
               const childGrades = data["Child Grade(s)"].split(",");
               searchResults += 1
-              console.log(childGrades)
             return (
               <div key={key}>
                   <FamilyComponent
