@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import emailjs from '@emailjs/browser';
 import './SubmitModal.css';
 
 
@@ -58,28 +59,23 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
                 })
                   .then((r) => {
                     if (r.status === 200) {
-                      const config = {
-                        SecureToken: 'ec3f12c6-2235-4974-bb7d-9f2ddf37ab83', //process.env.REACT_APP_EJ_TOKEN,
-                        To : sponsorEmail,
-                        Cc: "consolinojoe@yahoo.com",
-                        From : "consolinojoe@gmail.com",
-                        Subject : "Thank you!",
-                        Body : `Hello ${firstName}, thank you for participating in our Adopt A Student Program!! You have chosen to sponsor 
-                         ${mothersFirstName}'s ${numberOfChildren} student(s): <br /><br />${childrenInfo}<br />
-                         Please purchase a backpack for each child and fill it with grade appropriate school supplies. If you would like a list of 
-                         suggested supplies, go to https://www.families4families.com You do not need to follow it exactly, anything you are willing and able to give will be greatly appreciated! 
-                         Please label it with the student’s name and drop at 250 Braen Avenue in Wyckoff on August 26th between 10-12. If you cannot drop off during this time,
-                          you can drop off at the same address Tuesdays through Fridays from 1:00-5:00. If you have any questions, please reach out to us  at 201-499-5622. 
-                          Thank you again for helping to start the school year off right for students in need!`
-                      }
-                      if (window.Email) {
-                        window.Email.send(config).then(() =>{
+                      const templateParams = {
+                        sponsorEmail: sponsorEmail,
+                        firstName: firstName,
+                        message: `Thank you for participating in our Adopt A Student Program!! You have chosen to sponsor 
+                            ${mothersFirstName}'s ${numberOfChildren} student(s): <br /><br />${childrenInfo}<br />`                           
+                    };
+                    // emailjs.send('<YOUR_SERVICE_ID>','<YOUR_TEMPLATE_ID>', templateParams, '<YOUR_PUBLIC_KEY>')
+                    emailjs.send("service_7pz9wh6","template_gj7t0y6", templateParams, process.env.REACT_APP_EJ_API)
+	                    .then((response) => {
+	                        // console.log('SUCCESS!', response.status, response.text);
                           alert('Thank you! Your sign up was successful! Please check your inbox for a confirmation email. If you do not see it, please check your spam folder.')
                           window.location.reload()
-                        })
+	                      }, (err) => {
+	                        // console.log('FAILED...', err);
+                          alert('Email failed to send. Please try again, or email Families for Families if the problem continues')
 
-                      }
-                     
+	                      });                     
                     } else if (r.status !== 200) {
                       alert("There was a problem signing up");
                     }
