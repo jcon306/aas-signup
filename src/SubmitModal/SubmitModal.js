@@ -66,7 +66,7 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
                             ${mothersFirstName}'s ${numberOfChildren} student(s): <br /><br />${childrenInfo}<br />`                           
                     };
                     // emailjs.send('<YOUR_SERVICE_ID>','<YOUR_TEMPLATE_ID>', templateParams, '<YOUR_PUBLIC_KEY>')
-                    emailjs.send("service_7pz9wh6","template_gj7t0y6", templateParams, process.env.REACT_APP_EJ_API)
+                    emailjs.send("service_y7z7za8","template_gj7t0y6", templateParams, process.env.REACT_APP_EJ_API)
 	                    .then((response) => {
 	                        // console.log('SUCCESS!', response.status, response.text);
                           alert('Thank you! Your sign up was successful! Please check your inbox for a confirmation email. If you do not see it, please check your spam folder.')
