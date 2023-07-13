@@ -1,5 +1,5 @@
 import React from 'react'
-import  backToSchoolLogo  from '../backToSchool.jpeg'
+import backToSchoolLogo  from '../backToSchool.jpeg'
 import './HeaderComponent.css'
 
 const HeaderComponent = () => {

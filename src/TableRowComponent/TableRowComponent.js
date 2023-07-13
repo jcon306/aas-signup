@@ -19,14 +19,10 @@ function ChildInfo({ childNames, childGenders, childAges, childGrades }) {
   );
 }
 
-function TableRow({mothersFirstName,mothersEmail, numberOfChildren, childNames, childAges, childGrades, childGenders, sponsorEmail}) {
-  //const [isExpanded, setIsExpanded] = useState(true)
+function TableRow({parentFirstName,parentEmail, numberOfChildren, childNames, childAges, childGrades, childGenders, sponsorEmail}) {
+
   const [showModal, setShowModal] = useState(false);
   const isExpanded = true
-
-  // const handleRowClick = () => {
-  //   setIsExpanded(true)
-  // }
 
   const handleSignUpClick = (event) => {
     if (isExpanded) {
@@ -46,8 +42,8 @@ function TableRow({mothersFirstName,mothersEmail, numberOfChildren, childNames, 
           <div className="d-flex justify-content-between align-items-center">
             <div>
               {!isExpanded ?
-                <h6 className='motherInfo'> {mothersFirstName}'s {numberOfChildren} student(s)</h6> :
-                <h6 className='motherInfo'> {mothersFirstName}'s {numberOfChildren} student(s)</h6>
+                <h6 className='parentInfo'> {parentFirstName}'s {numberOfChildren} student(s)</h6> :
+                <h6 className='parentInfo'> {parentFirstName}'s {numberOfChildren} student(s)</h6>
               }
             </div>
             <div className="d-none d-md-block" style={{ paddingLeft: '10px', paddingRight: '10px' }}>
@@ -77,8 +73,8 @@ function TableRow({mothersFirstName,mothersEmail, numberOfChildren, childNames, 
       )}
        <Modal show={showModal} onHide={handleCloseModal}>
         <SubmitModal
-          mothersFirstName={mothersFirstName}
-          mothersEmail={mothersEmail}
+          parentFirstName={parentFirstName}
+          parentEmail={parentEmail}
           numberOfChildren={numberOfChildren}
           childNames={childNames}
           childAges={childAges}

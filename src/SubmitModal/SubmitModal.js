@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 import './SubmitModal.css';
 
 
-const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNames, childAges, childGrades, childGenders, hideModel }) => {
+const SubmitModal = ({ parentFirstName, parentEmail, numberOfChildren, childNames, childAges, childGrades, childGenders, hideModel }) => {
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -26,7 +26,7 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      fetch(process.env.REACT_APP_GS_URL_SUBMIT + mothersEmail)
+      fetch(process.env.REACT_APP_GS_URL_SUBMIT + parentEmail)
             .then((response) => response.json())
             .then((data) => {
               if (data[0]["Sponsor Email"]) {
@@ -49,7 +49,7 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
                   "Sponsor First Name": firstName,
                   "Sponsor Sign Up Date": new Date().toLocaleDateString('en-US')
                 };
-                fetch(process.env.REACT_APP_GS_URL_SUBMIT + mothersEmail, {
+                fetch(process.env.REACT_APP_GS_URL_SUBMIT + parentEmail, {
                   method: "PATCH",
                   mode: "cors",
                   headers: {
@@ -63,7 +63,7 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
                         sponsorEmail: sponsorEmail,
                         firstName: firstName,
                         message: `Thank you for participating in our Adopt A Student Program!! You have chosen to sponsor 
-                            ${mothersFirstName}'s ${numberOfChildren} student(s): <br /><br />${childrenInfo}<br />`                           
+                            ${parentFirstName}'s ${numberOfChildren} student(s): <br /><br />${childrenInfo}<br />`                           
                     };
                     // emailjs.send('<YOUR_SERVICE_ID>','<YOUR_TEMPLATE_ID>', templateParams, '<YOUR_PUBLIC_KEY>')
                     emailjs.send("service_y7z7za8","template_gj7t0y6", templateParams, process.env.REACT_APP_EJ_API)
@@ -142,7 +142,7 @@ const SubmitModal = ({ mothersFirstName, mothersEmail, numberOfChildren, childNa
               <Form.Label>
               Once you hit submit, a confirmation email will be sent shortly. <span style={{color: 'red'}}>If you do not see it, please check your spam folder.</span> 
               </Form.Label>
-              <h6>{mothersFirstName}'s {numberOfChildren} student(s)</h6>
+              <h6>{parentFirstName}'s {numberOfChildren} student(s)</h6>
               <ul>
                 {Array.isArray(childNames) && childNames.map((child, index) => {
                     return (

@@ -35,8 +35,8 @@ const InfoComponent = ({ familySizeFilter, familyGendersFilter, hideFilter }) =>
               <div key={key}>
                   <FamilyComponent
                     key={key}
-                    mothersFirstName={data["Mother's First Name"]}
-                    mothersEmail={data["Email"]}
+                    parentFirstName={data["Parents's First Name"]}
+                    parentEmail={data["Email"]}
                     numberOfChildren={data["Number Of Children"]}
                     childNames={childNames}
                     childGenders={childGenders}

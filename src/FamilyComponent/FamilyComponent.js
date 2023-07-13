@@ -3,15 +3,15 @@ import TableRow from '../TableRowComponent/TableRowComponent';
 import './FamilyComponent.css'
 
 
-const FamilyComponent = ({ mothersFirstName, mothersEmail, numberOfChildren, childNames, childAges, childGrades, childGenders, sponsorEmail }) => {
-    if (!mothersFirstName) return <div />;
+const FamilyComponent = ({ parentFirstName, parentEmail, numberOfChildren, childNames, childAges, childGrades, childGenders, sponsorEmail }) => {
+    if (!parentFirstName) return <div />;
     return (
         <div>
             <table width={"100%"}>
                 <tbody>
                     <TableRow 
-                        mothersFirstName={mothersFirstName} 
-                        mothersEmail={mothersEmail}
+                        parentFirstName={parentFirstName} 
+                        parentEmail={parentEmail}
                         numberOfChildren={numberOfChildren} 
                         childNames={childNames}
                         childGenders={childGenders} 
