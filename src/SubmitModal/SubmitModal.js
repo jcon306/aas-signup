@@ -26,6 +26,10 @@ const SubmitModal = ({ parentFirstName, parentEmail, numberOfChildren, childName
 
     const handleSubmit = (e) => {
       e.preventDefault();
+      const date = new Date() 
+      let year= date.getFullYear()
+      let month= date.getMonth()+1
+      let day= date.getDate()
       fetch(process.env.REACT_APP_GS_URL_SUBMIT + parentEmail)
             .then((response) => response.json())
             .then((data) => {
@@ -47,7 +51,7 @@ const SubmitModal = ({ parentFirstName, parentEmail, numberOfChildren, childName
                   "Sponsor Email": sponsorEmail,
                   "Sponsor Last Name": lastName,
                   "Sponsor First Name": firstName,
-                  "Sponsor Sign Up Date": new Date().toLocaleDateString('en-US')
+                  "Sponsor Sign Up Date": `${day}/${month}/${year}`
                 };
                 fetch(process.env.REACT_APP_GS_URL_SUBMIT + parentEmail, {
                   method: "PATCH",
