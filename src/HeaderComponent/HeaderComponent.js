@@ -20,7 +20,8 @@ const HeaderComponent = () => {
                     one way you can help them succeed. Choose a family below that you would like to purchase backpacks filled with the 
                     school supplies for.  Once you sign up, you will then receive an email with a link to a supply list specific to your student. 
                     You will then purchase the supplies and drop them off to Families for Families, 250 Braen Ave in Wyckoff on August 26th between 
-                    10-12 to be delivered to the families.  (we can make arrangements for early drop offs)
+                    10-12 to be delivered to the families (we can make arrangements for early drop offs). We will be adding more students to the list 
+                    over the next few weeks. If there are no more students available, please check back later. Thank you! 
  
                 </p>
             </div> 
