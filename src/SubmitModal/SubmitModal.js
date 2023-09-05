@@ -30,6 +30,8 @@ const SubmitModal = ({ parentFirstName, parentEmail, numberOfChildren, childName
       // let year= date.getFullYear()
       // let month= date.getMonth()+1
       // let day= date.getDate()
+
+      // ---------------------------------- ADD API URL BELOW ----------------------------------------------------
       fetch(process.env.REACT_APP_GS_URL_SUBMIT + parentEmail)
             .then((response) => response.json())
             .then((data) => {
@@ -53,6 +55,7 @@ const SubmitModal = ({ parentFirstName, parentEmail, numberOfChildren, childName
                   "Sponsor First Name": firstName,
                   "Sponsor Sign Up Date": new Date().toLocaleString().split(',')[0]
                 };
+                // ---------------------------------- ADD API URL BELOW ----------------------------------------------------
                 fetch(process.env.REACT_APP_GS_URL_SUBMIT + parentEmail, {
                   method: "PATCH",
                   mode: "cors",
